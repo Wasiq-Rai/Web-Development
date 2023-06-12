@@ -1,0 +1,344 @@
+
+
+<body>
+    <main class="main">
+        <div class="nav">
+          <% if (!user) {%>
+            <div class="top-nav">
+                <!-- <img id="logo-image" src="https://t4.ftcdn.net/jpg/03/13/37/47/360_F_313374706_bwbUlNUrg6v5bIaecWet2silUL2BbcQ3.jpg" alt=""> -->
+                <a href="/login"><button id="sign-in-button" >Sign in</button></a>
+            </div>
+            <% } %>
+
+            <div class="bottom-nav">
+                <div class="company-name">
+                    <h1>Events Walay</h1>
+                </div>
+                <div class="nav-tabs">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Venues</a></li>
+                        <li><a href="#">Suppliers</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Media</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <% if (user) {%>
+                          <li><a href="/logout">Logout</a></li>
+                        <% } %>
+
+                        <li><a href="#"><i class="fa fa-search"></i></a></li>
+                    </ul>
+                </div>
+                <% if (user) { %>
+                  <div class="USername">
+                    <%= user.username%>
+                  </div>
+                <% } %>
+
+                
+
+            </div>
+            
+        </div>
+        <div class="search-content">
+            <div class="center-content">
+                <h1>YOUR WEDDING, YOUR WAY</h1>
+                
+        
+                <div class="input">
+                    <div class="dropdown-row">
+                        <select name="category" id="category-select">
+                          <option value="" selected disabled>Select Category</option>
+                          <option value="Mehndi">Books</option>
+                          <option value="Waleema">Electronics</option>
+                          <option value="Baraat">Clothing</option>
+                          <option value="Birthday">Home Goods</option>
+                        </select>
+                        <select name="location" id="location-select">
+                          <option value="" selected disabled>Select Location</option>
+                          <option value="Lahore">New York</option>
+                          <option value="Faisalabd">Los Angeles</option>
+                          <option value="Karachi">Chicago</option>
+                          <option value="Islamabad">Miami</option>
+                        </select>
+                        <button id="days-30-button">Search &gt;</button>
+                      </div>
+                    
+        
+                </div>
+                
+        
+            </div>
+        </div>
+        <div class="categories">
+            <h2>Browse by Category</h2>
+            <div class="row">
+              <div class="col">
+                <div class="category-card">
+                  <img src="/assets/images/mehndi.jpg" alt="Mehndi">
+                  <h5>Mehndi</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <a href="#" class="btn">View More <span>&rarr;</span></a>
+                  <div class="picture-count">10 Pictures</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="category-card">
+                  <img src="/assets/images/barat.jpeg" alt="Barat">
+                  <h5>Barat</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <a href="#" class="btn">View More <span>&rarr;</span></a>
+                  <div class="picture-count">8 Pictures</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="category-card">
+                  <img src="/assets/images/Waleema.jpeg" alt="Waleema">
+                  <h5>Waleema</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <a href="#" class="btn">View More <span>&rarr;</span></a>
+                  <div class="picture-count">12 Pictures</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="category-card">
+                  <img src="/assets/images/Birthday.jpeg" alt="Birthdays">
+                  <h5>Birthday</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <a href="#" class="btn">View More <span>&rarr;</span></a>
+                  <div class="picture-count">15 Pictures</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="categories">
+            <h2>Popular Venues</h2>
+            <div class="row">
+              <div class="col">
+                <div class="category-card">
+                  <img src="/assets/images/Lahore.jpeg" alt="Lahore">
+                  <h5>Lahore</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <a href="#" class="btn">View More <span>&rarr;</span></a>
+                  <div class="picture-count">10 Pictures</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="category-card">
+                  <img src="/assets/images/Islamabad.jpeg" alt="Islamabad">
+                  <h5>Islamabad</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <a href="#" class="btn">View More <span>&rarr;</span></a>
+                  <div class="picture-count">8 Pictures</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="category-card">
+                  <img src="/assets/images/Karachi.jpeg" alt="Karachi">
+                  <h5>Karachi</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <a href="#" class="btn">View More <span>&rarr;</span></a>
+                  <div class="picture-count">12 Pictures</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="category-card">
+                  <img src="/assets/images/Fsd.jpeg" alt="Faisalabd">
+                  <h5>Faisalabad</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <a href="#" class="btn">View More <span>&rarr;</span></a>
+                  <div class="picture-count">15 Pictures</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="banner">
+            <div class="banner-left">
+              <img src="/assets/images/banner.jpeg" alt="Banner Image">
+            </div>
+            <div class="banner-right">
+              <h1>Al-Shafi Marque and Complex</h1>
+              <h2>Grand Opening! A great deal for luxury and breathtaking events. First 10 clients will get extra benefits.</h2>
+              <a href="#" class="button">Learn More</a>
+            </div>
+          </div>
+          <h2 class="review-heading">Reviews</h2>
+          <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <% reviews.forEach(review => { %>
+              <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg.freepik.com%2Ffree-vector%2Fparty-crowd-silhouettes-dancing-nightclub_1048-11557.jpg%3Fw%3D2000&tbnid=237nwkXghv_-oM&vet=12ahUKEwi77arxq73_AhUKmScCHYKbCb4QMygBegUIARDlAQ..i&imgrefurl=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fparty-crowd&docid=1Aca0kKsaPjlgM&w=2000&h=1000&q=image%20for%20party&client=ubuntu-sn&ved=2ahUKEwi77arxq73_AhUKmScCHYKbCb4QMygBegUIARDlAQ" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 style="font-size:large;"><%= review.content %></h5>
+                  <p><%= review.author %></p>
+                </div>
+              </div>
+            </div>
+              <% })%>
+
+              
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <!-- Scrollable modal -->
+          <!-- Add Review Button -->
+          <% if (user) {%>
+            <button id="btn-add-review">Add Review</button>
+            <% } %>
+
+<!-- Modal -->
+<div class="modal fade" id="addReviewModal"  aria-labelledby="addReviewModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addReviewModalLabel">Add Review</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Review form or content goes here -->
+        <form id="review-form" method="post" action="/save-review">
+          <div class="form-group">
+            <label for="content">Review Content:</label>
+            <textarea class="form-control" id="content" name="content"rows="4"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="author">Author:</label>
+            <input type="text" class="form-control" name="author" id="author">
+          </div>
+          <div class="form-group">
+            <label for="rating">Rating:</label>
+            <input type="number" class="form-control"name="rating" id="rating" min="1" max="5">
+          </div>
+          <div class="modal-footer">
+            <button id="submitReviewBtn"type=submit class="btn btn-primary">Submit</button>
+            <button id="closeReviewBtn"type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+          
+          
+          
+          
+          
+    </main>
+    <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>Events Walay</h2>
+              <p>Explore our exceptional event management services and make your next event an unforgettable experience with us. Contact us for inquiries, browse our suppliers, and access quick links to our latest events and updates. Your satisfaction is our top priority.</p>
+              <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Contacts</a></li>
+                <li class="list-inline-item"><a href="#">Suppliers</a></li>
+                <li class="list-inline-item"><a href="#">Quick Links</a></li>
+                <li class="list-inline-item"><a href="#">Other Things</a></li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul class="list-inline text-right">
+                <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="#">Cookie Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+    
+</body>
+<!-- </html> -->
+
+
+<script>
+  // Open the modal when the "Add Review" button is clicked
+// Open the modal when the "Add Review" button is clicked
+document.querySelector("#btn-add-review").addEventListener("click", function() {
+  var modal = document.getElementById("addReviewModal");
+  var modalInstance = new bootstrap.Modal(modal);
+  modalInstance.show();
+  
+  // Close the modal when the "Submit" button is clicked
+  document.getElementById("submitReviewBtn").addEventListener("click", function() {
+    modalInstance.hide();
+  });
+  
+  // Close the modal when the "Close" button is clicked
+  document.getElementById("closeReviewBtn").addEventListener("click", function() {
+    modalInstance.hide();
+  });
+});
+
+  
+  // Handle form submission
+  // document.getElementById("reviewForm").addEventListener("submit", function(event) {
+  //   event.preventDefault(); // Prevent the default form submission
+
+  //   // Get form data
+  //   var formData = new FormData(this);
+  //   var reviewData = {
+  //     content: formData.get("content"),
+  //     author: formData.get("author"),
+  //     rating: parseInt(formData.get("rating"))
+  //   };
+  //   console.log(reviewData.author);
+
+  //   // Send an HTTP request to save the review
+  //   fetch("/save-review", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify(reviewData)
+  //   })
+  //   .then(function(response) {
+  //     if (response.ok) {
+  //       // Review saved successfully
+  //       console.log(response);
+  //       modalInstance.hide();
+  //     } else {
+  //       // Handle error
+  //       console.error("Failed to save review:", response.status);
+  //     }
+  //   })
+  //   .catch(function(error) {
+  //     console.error("Failed to save review:", error);
+  //   });
+  // });
+
+</script>
+
+<style>
+  label{
+    color:black
+  }
+
+  textarea, input{
+    border: 3px solid black
+  }
+  .USername{
+    border: 3px solid black;
+    color: black;
+  }
+</style>

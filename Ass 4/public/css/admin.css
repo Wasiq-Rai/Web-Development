@@ -1,0 +1,37 @@
+
+  #sidebar {
+    background-color: #f0f0f0;
+    width: 16%;
+    border-right: 1px solid #ccc;
+  }
+
+  #sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #sidebar li {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+  }
+
+  #sidebar li:last-child {
+    border-bottom: none;
+  }
+
+  #sidebar a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+
+  #sidebar i {
+    margin-right: 10px;
+  }
+
+  #sidebar span {
+    margin-left: auto;
+  }

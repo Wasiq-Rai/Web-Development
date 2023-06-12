@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Screen</title>
+    <link rel="icon" href="https://www.netflix.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/javascript/javascript.js"></script>
+</head>
+<body>
+    <% if (flash) { %>
+        <div class="alert alert-<%-flash.type%>">
+          <%= flash.message%>
+        </div>
+      <% } %>
+    <form action="" method="post">
+
+    <div class="main2">
+    <div class="container">
+        <div class="heading-login">
+            <h1>SignUp</h1>
+        </div>
+		<h2>Create a new Account</h2>
+		<div id="form">
+			<label for="username">Username:</label>
+			<input type="text" id="username" class="form-control" name="username" placeholder="Enter your username">
+            <label for="username">Email:</label>
+			<input type="text" id="email" class="form-control" name="email" placeholder="Enter your username">
+			<label for="password">Password:</label>
+			<input type="password" id="password" class="form-control" name="password" placeholder="Enter your password">
+            
+            <input type="hidden" name="role" value="client">
+			<button type="submit" style="margin: 10px">Sign Up</button>
+            <div id="success">
+                Success
+            </div>
+            <p style="color: white">Already have an account? </p>
+            <a href="/login" style="color: white">Sign In</a>
+        
+
+
+            
+		</div>
+	</div>
+</div>
+</form>
+</body>
+</html>

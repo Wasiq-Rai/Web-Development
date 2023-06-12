@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Screen</title>
+    <link rel="icon" href="https://www.netflix.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/javascript/javascript.js"></script>
+</head>
+<body>
+    <% if (flash) { %>
+        <div class="alert alert-<%-flash.type%>">
+          <%= flash.message%>
+        </div>
+      <% } %>
+    <form action="" method="post">
+    <div class="main2">
+    <div class="container">
+        <div class="heading-login">
+            <h1>Login</h1>
+        </div>
+		<h2>Login to Your Account</h2>
+		<div id="form">
+			<label for="username">Username:</label>
+			<input type="text" id="username" class="input" name="username" placeholder="Enter your username">
+			<label for="password">Password:</label>
+			<input type="password" id="password" class="input" name="password" placeholder="Enter your password">
+            <div class="mb-3">
+                <label class="form-label">Role</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="role" id="clientRadio" value="client" checked>
+                  <label class="form-check-label" for="clientRadio">Client</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="role" id="adminRadio" value="admin">
+                  <label class="form-check-label" for="adminRadio">Admin</label>
+                </div>
+              </div>
+			<button type="submit">Login</button>
+            <div id="success">
+                Success
+            </div>
+            <a href="/register" style="color: white">Create new acccount</a>
+        
+
+
+            
+		</div>
+	</div>
+</div>
+</form>
+</body>
+</html>

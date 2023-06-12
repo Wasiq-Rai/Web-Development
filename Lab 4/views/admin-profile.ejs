@@ -1,0 +1,313 @@
+
+<html>
+  
+  <div class="container-admin">
+    <div class="nav">
+      <% if (!user) {%>
+        <div class="top-nav">
+            <!-- <img id="logo-image" src="https://t4.ftcdn.net/jpg/03/13/37/47/360_F_313374706_bwbUlNUrg6v5bIaecWet2silUL2BbcQ3.jpg" alt=""> -->
+            <a href="/login"><button id="sign-in-button" >Sign in</button></a>
+        </div>
+        <% } %>
+
+        <div class="bottom-nav">
+            <div class="company-name">
+                <h1>Events Walay</h1>
+            </div>
+            <div class="nav-tabs">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Venues</a></li>
+                    <li><a href="#">Suppliers</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Media</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <% if (user) {%>
+                      <li><a href="/logout">Logout</a></li>
+                    <% } %>
+
+                    <li><a href="#"><i class="fa fa-search"></i></a></li>
+                </ul>
+            </div>
+            <% if (user) { %>
+              <div class="alert alert-<%-flash.type%>">
+                <%= user.username%>
+              </div>
+            <% } %>
+
+            
+
+        </div>
+        
+    </div>
+    <div class="row" >
+      <aside id="sidebar "style="margin-top: 100px;" class="col-md-3 neumorphic-sidebar">
+        <ul>
+          <li>
+            <a href="index.html">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>Dashboard</span>
+              <span><i class="fas fa-angle-right"></i></span>
+            </a>
+          </li>
+          <li>
+            <a href="forms.html">
+              <i class="fab fa-wpforms"></i>
+              <span>Clients</span>
+              <span><i class="fa fa-angle-right"></i></span>
+            </a>
+          </li>
+          <li>
+            <a href="buttons.html">
+              <i class="fas fa-grip-horizontal"></i>
+              <span>Events</span>
+              <span><i class="fa fa-angle-right"></i></span>
+            </a>
+          </li>
+          <li>
+            <a href="tables.html">
+              <i class="fas fa-table"></i>
+              <span>Pricing</span>
+              <span><i class="fa fa-angle-right"></i></span>
+            </a>
+          </li>
+          <li>
+            <a href="ui.html">
+              <i class="fab fa-uikit"></i>
+              <span>Items</span>
+              <span><i class="fa fa-angle-right"></i></span>
+            </a>
+          </li>
+          <li>
+            <a href="modals.html">
+              <i class="fas fa-square-full"></i>
+              <span>Graphs</span>
+              <span><i class="fa fa-angle-right"></i></span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="far fa-file"></i>
+              <span>Pages</span>
+              <span><i class="fa fa-angle-down"></i></span>
+            </a>
+            <ul>
+              <li>
+                <a href="login.html">
+                  <span>Login Page</span>
+                  <span><i class="fa fa-angle-right"></i></span>
+                </a>
+              </li>
+              <li>
+                <a href="register.html">
+                  <span>Register Page</span>
+                  <span><i class="fa fa-angle-right"></i></span>
+                </a>
+              </li>
+              <li>
+                <a href="404.html">
+                  <span>404 Page</span>
+                  <span><i class="fa fa-angle-right"></i></span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
+      <div class="col-md-9" style=" margin-top:0px ;">
+        <h2>Upcoming Events</h2>
+        <div class="card-deck neumorphic-cards">
+        <% events.forEach(event => { %>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><%= event.title %></h5>
+                <p class="card-text"><%= event.description %></p>
+                <p class="card-text"><strong>Date:</strong> <%= event.date.toLocaleDateString() %></p>
+                <p class="card-text"><strong>Location:</strong> <%= event.location %></p>
+              </div>
+            </div>
+          <% }) %>
+
+
+        </div>
+      </div>
+     
+     
+     
+      
+    </div>
+    <div class="col">
+      <div class="container" >
+        <button id="show-all-events-btn">Show All Events</button>
+      
+        <div id="events-row" style="display: none;">
+          <div class="rev-flex" style="display: flex; flex-wrap: wrap;">
+          <% allEvents.forEach(event => { %>
+            
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><%= event.title %></h5>
+                  <p class="card-text"><%= event.description %></p>
+                  <p class="card-text"><strong>Date:</strong> <%= event.date.toLocaleDateString() %></p>
+                  <p class="card-text"><strong>Location:</strong> <%= event.location %></p>
+                </div>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+        </div>
+      </div>
+
+     
+
+
+
+    </div>
+  </div>
+  
+</html>
+
+<style>
+  h2{
+    color: wheat;
+  }
+  .neumorphic-cards {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background-color: #e0e5ec;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2),
+              -4px -4px 8px 0 rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 6px 6px 12px 0 rgba(0, 0, 0, 0.2),
+              -6px -6px 12px 0 rgba(255, 255, 255, 0.5);
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+strong {
+  font-weight: bold;
+}
+.neumorphic-sidebar {
+  background-color: #4c4f53;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2),
+              -4px -4px 8px 0 rgba(37, 36, 36, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+i {
+  margin-right: 10px;
+}
+
+span {
+  margin-left: auto;
+}
+
+.fa-angle-right {
+  margin-left: auto;
+  transform: rotate(90deg);
+}
+
+ul ul {
+  margin-left: 20px;
+}
+
+.neumorphic-sidebar ul li {
+  background-color: #e0e5ec;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2),
+              -4px -4px 8px 0 rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.neumorphic-sidebar ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.neumorphic-sidebar ul li a:hover {
+  background-color: #d6dbe3;
+}
+
+.neumorphic-sidebar ul ul {
+  margin-left: 20px;
+}
+
+.neumorphic-sidebar ul ul li {
+  background-color: #646568;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1),
+              -2px -2px 4px 0 rgba(255, 255, 255, 0.2);
+}
+
+.neumorphic-sidebar ul ul li a:hover {
+  background-color: #4b5057;
+}
+#show-all-events-btn {
+    background-color: #4CAF50; /* Set the background color */
+    color: white; /* Set the text color */
+    padding: 10px 20px; /* Set padding */
+    font-size: 16px; /* Set the font size */
+    border: none; /* Remove the border */
+    cursor: pointer; /* Add cursor hover effect */
+    border-radius: 4px; /* Add rounded corners */
+  }
+
+  /* Button hover effect */
+  #show-all-events-btn:hover {
+    background-color: #45a049; /* Change the background color on hover */
+  }
+
+</style>
+
+<script>
+  const showAllEventsButton = document.getElementById('show-all-events-btn');
+  const eventsContainer = document.getElementById('events-row');
+
+  showAllEventsButton.addEventListener('click', () => {
+    eventsContainer.style.display = 'block';
+  });
+</script>
